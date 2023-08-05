@@ -1,23 +1,8 @@
+mod day_1;
+mod day_2;
+
 fn main() {
-    println!("{}", day_1());
-}
-
-fn day_1() -> i64 {
-    let elves: Vec<Vec<i64>> = vec![vec![1000, 2000, 3000], vec![4000], vec![5000, 6000], vec![7000, 8000, 9000], vec![10000]];
-    let mut max_cal = 0;
-    for elf in elves {
-        let cals = sum_calories(elf);
-        if cals > max_cal {
-            max_cal = cals;
-        }
-    }
-    return max_cal;
-}
-
-fn sum_calories(food: Vec<i64>) -> i64 {
-    let mut sum = 0;
-    for item in food {
-        sum += item;
-    }
-    return sum;
+    println!("{}", day_1::calculate_day_1(day_1::read_lines_day_1("./data/day_1.txt"), 3));
+    println!("{}", day_2::calculate_day_2_part_1(day_2::read_lines_day_2_part_1("./data/day_2.txt")));
+    println!("{}", day_2::calculate_day_2_part_2(day_2::read_lines_day_2_part_2("./data/day_2.txt")));
 }
